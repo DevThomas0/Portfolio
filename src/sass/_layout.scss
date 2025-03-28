@@ -1,4 +1,3 @@
-// _layout.scss
 @use 'variables' as *;
 @use 'mixins' as *;
 
@@ -20,7 +19,6 @@ body {
   display: none;
 }
 
-/* Common Section Styling */
 section {
   padding: 4rem 2rem;
   text-align: center;
@@ -33,7 +31,6 @@ section {
   margin: 0 auto;
 }
 
-/* Hero Section */
 .hero {
   height: 100vh;
   position: relative;
@@ -71,10 +68,9 @@ section {
   }
   
   animation: slideInUp 1s ease forwards;
-  opacity: 1; /* Ensure hero displays immediately */
+  opacity: 1;
 }
 
-/* About Section */
 .about-section {
   background: linear-gradient(135deg, $secondary-color, $background-color);
   color: $text-color;
@@ -115,7 +111,6 @@ section {
   }
 }
 
-/* Projects Section */
 .projects-section {
   background: $background-color;
   
@@ -142,8 +137,6 @@ section {
     }
   }
 }
-
-/* Services Section */
 .services-section {
   background: linear-gradient(135deg, $primary-color, darken($primary-color, 20%));
   color: $background-color;
@@ -178,13 +171,11 @@ section {
       }
     }
     
-    /* Animation Delay Variations */
     .delay-1 { animation-delay: 0.3s; }
     .delay-2 { animation-delay: 0.6s; }
   }
 }
 
-/* Contact Section */
 .contact-section {
   background: linear-gradient(135deg, $secondary-color, darken($secondary-color, 20%));
   color: $background-color;
@@ -231,7 +222,6 @@ section {
   }
 }
 
-/* Footer */
 .footer {
   text-align: center;
   padding: $spacing-base;
