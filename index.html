@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A futuristic portfolio showcasing creative coding and front-end development with immersive animations and sci-fi design">
+  <title>Ultimate Sci-Fi Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="js/main.js" as="script">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="loader" role="status" aria-label="Loading page">
+    <div class="loading-container">
+      <div class="glitch-loading-bar" aria-hidden="true">
+         <div class="bar"></div>
+         <div class="bar glitch"></div>
+      </div>
+      <div class="loading-text" aria-live="polite">Initializing…</div>
+    </div>
+  </div>
+
+  <main id="main-content" class="hidden" tabindex="-1">
+    <header class="hero" id="hero">
+      <div class="hero-content">
+        <h1><span data-text="Welcome to My Futuristic Portfolio">Welcome to My Futuristic Portfolio</span></h1>
+        <p>Exploring the edges of creativity with advanced CSS & animations.</p>
+        <a href="#projects" class="btn explore-btn" aria-label="Explore Projects">Explore</a>
+      </div>
+    </header>
+
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="content-wrapper">
+        <h2 id="about-title">About Me</h2>
+        <p>
+          I am a creative coder and front-end developer with a passion for futuristic design and immersive animations. My work blends technology and art to create mesmerizing web experiences.
+        </p>
+        <div class="animated-icons" aria-label="Decorative animated icons">
+          <span class="icon icon-rotate" aria-hidden="true">🚀</span>
+          <span class="icon icon-bounce" aria-hidden="true">🛰️</span>
+          <span class="icon icon-fade" aria-hidden="true">🔮</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section" aria-labelledby="projects-title">
+      <h2 id="projects-title">My Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card" role="article">
+          <h3>Project One</h3>
+          <img src="/api/placeholder/300/200" alt="Project One Preview" loading="lazy">
+          <p>A brief description of project one.</p>
+          <a href="#" class="project-link">View Details</a>
+        </article>
+        <article class="project-card" role="article">
+          <h3>Project Two</h3>
+          <img src="/api/placeholder/300/200" alt="Project Two Preview" loading="lazy">
+          <p>A brief description of project two.</p>
+          <a href="#" class="project-link">View Details</a>
+        </article>
+        <article class="project-card" role="article">
+          <h3>Project Three</h3>
+          <img src="/api/placeholder/300/200" alt="Project Three Preview" loading="lazy">
+          <p>A brief description of project three.</p>
+          <a href="#" class="project-link">View Details</a>
+        </article>
+      </div>
+    </section>
+    
+    <section id="services" class="services-section" aria-labelledby="services-title">
+      <div class="content-wrapper">
+        <h2 id="services-title">Services</h2>
+        <div class="services-grid">
+          <div class="service-card fadeInUp" role="region" aria-label="Web Design Service">
+            <h3>Web Design</h3>
+            <p>Merging art and technology for creative user experiences.</p>
+          </div>
+          <div class="service-card fadeInUp delay-1" role="region" aria-label="Animation Service">
+            <h3>Animation</h3>
+            <p>Dynamic animations that engage and captivate your audience.</p>
+          </div>
+          <div class="service-card fadeInUp delay-2" role="region" aria-label="Coding Service">
+            <h3>Coding</h3>
+            <p>Clean, efficient code that brings beautiful designs to life.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="content-wrapper">
+        <h2 id="contact-title">Contact Me</h2>
+        <form class="contact-form" id="contact-form" aria-labelledby="contact-title">
+          <label for="name" class="visually-hidden">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+          
+          <label for="email" class="visually-hidden">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+          
+          <label for="message" class="visually-hidden">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+          
+          <button type="submit" class="btn" aria-label="Send Message">Send Message</button>
+        </form>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <p>&copy; 2025 My Portfolio</p>
+      <nav aria-label="Social Media Links">
+        <a href="#" aria-label="GitHub Profile">GitHub</a>
+        <a href="#" aria-label="LinkedIn Profile">LinkedIn</a>
+        <a href="#" aria-label="Twitter Profile">Twitter</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

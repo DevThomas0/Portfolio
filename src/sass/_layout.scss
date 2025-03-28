@@ -1,0 +1,240 @@
+// _layout.scss
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  background-color: $background-color;
+  color: $text-color;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  @include center-flex;
+  background-color: $background-color;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Common Section Styling */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  position: relative;
+  @include center-flex;
+  text-align: center;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  
+  .hero-content {
+    animation: fadeIn 1.5s ease-in-out forwards;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: $spacing-base;
+    }
+    
+    p {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-base;
+    }
+    
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: $accent-color;
+      color: $background-color;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      @include smooth-transition(0.3s);
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  animation: slideInUp 1s ease forwards;
+  opacity: 1; /* Ensure hero displays immediately */
+}
+
+/* About Section */
+.about-section {
+  background: linear-gradient(135deg, $secondary-color, $background-color);
+  color: $text-color;
+  border-top: 2px solid $accent-color;
+  border-bottom: 2px solid $accent-color;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-base;
+    animation: slideInUp 1s ease forwards;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: $spacing-base;
+  }
+  
+  .animated-icons {
+    margin-top: 2rem;
+    
+    .icon {
+      font-size: 3rem;
+      display: inline-block;
+      margin: 0 1rem;
+    }
+    
+    .icon-rotate {
+      animation: rotate360 2s linear infinite;
+    }
+    
+    .icon-bounce {
+      animation: bounce 2s infinite;
+    }
+    
+    .icon-fade {
+      animation: fadeIn 2s ease-in-out infinite alternate;
+    }
+  }
+}
+
+/* Projects Section */
+.projects-section {
+  background: $background-color;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-base;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    
+    .project-card {
+      background: darken($background-color, 10%);
+      padding: $spacing-base;
+      border: 1px solid lighten($background-color, 10%);
+      @include smooth-transition(0.3s);
+      
+      &:hover {
+        transform: translateY(-5px);
+        border-color: $accent-color;
+      }
+    }
+  }
+}
+
+/* Services Section */
+.services-section {
+  background: linear-gradient(135deg, $primary-color, darken($primary-color, 20%));
+  color: $background-color;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-base;
+  }
+  
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    
+    .service-card {
+      background: rgba($accent-color, 0.2);
+      padding: $spacing-base;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      @include smooth-transition(0.3s);
+      animation: slideInUp 1s ease forwards;
+      
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: $spacing-base;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+    
+    /* Animation Delay Variations */
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(135deg, $secondary-color, darken($secondary-color, 20%));
+  color: $background-color;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-base;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    input, textarea {
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      @include smooth-transition(0.3s);
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 5px $accent-color;
+    }
+    
+    .btn {
+      padding: 0.75rem;
+      border: none;
+      background: $accent-color;
+      color: $background-color;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      @include smooth-transition(0.3s);
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: $spacing-base;
+  background: lighten($background-color, 5%);
+  animation: fadeIn 1s ease forwards;
+}

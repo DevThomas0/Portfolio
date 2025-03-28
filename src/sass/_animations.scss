@@ -1,0 +1,76 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-15px); }
+  60% { transform: translateY(-7px); }
+}
+
+@keyframes rotate360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideOutUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+h1 {
+  position: relative;
+  overflow: hidden;
+}
+
+h1::before,
+h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+h1::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  animation: glitch 2s infinite linear alternate-reverse;
+}
+
+h1::after {
+  left: -2px;
+  text-shadow: 1px 0 blue;
+  animation: glitch 2s infinite linear alternate;
+}
+
+@keyframes glitch {
+  0% {
+      clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+  20% {
+      clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  40% {
+      clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  60% {
+      clip-path: polygon(0 1%, 100% 1%, 100% 8%, 0 8%);
+  }
+  80% {
+      clip-path: polygon(0 33%, 100% 33%, 100% 44%, 0 44%);
+  }
+  100% {
+      clip-path: polygon(0 44%, 100% 44%, 100% 50%, 0 50%);
+  }
+}

@@ -1,0 +1,11 @@
+// _mixins.scss
+@mixin smooth-transition($duration: 0.5s, $ease: ease) {
+    transition: all $duration $ease;
+  }
+  
+  @mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

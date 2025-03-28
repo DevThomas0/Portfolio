@@ -1,0 +1,86 @@
+// _loader.scss
+@use 'variables' as *;
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $background-color;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-out; // Added for smooth fading
+}
+
+.loading-container {
+  text-align: center;
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: $accent-color;
+  text-shadow: 0 0 5px $accent-color;
+}
+
+/* Glitch loading bar */
+.glitch-loading-bar {
+  position: relative;
+  width: 300px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.glitch-loading-bar .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: $primary-color;
+  animation: loading 3s ease-out forwards;
+}
+
+.glitch-loading-bar .bar.glitch {
+  background-color: $accent-color;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  animation: glitch 3s infinite, loading 3s ease-out forwards;
+}
+
+@keyframes loading {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  20% {
+    clip-path: inset(10% 0 5% 0);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    clip-path: inset(5% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  60% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    clip-path: inset(10% 0 5% 0);
+    transform: translate(2px, 2px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+}
